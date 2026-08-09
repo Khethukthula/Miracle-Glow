@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://miracle-glow.pages.dev/sitemap.xml
+Sitemap: https://miracleglow.co.za/sitemap.xml
