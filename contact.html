@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="heart.png">
+    <title>Contact - Miracle & Glow</title>
+    <link rel="canonical" href="https://miracleglow.co.za/contact.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() { emailjs.init("AgsJeql2KExEFDqbw"); })();
+    </script>
+    <style>
+        @keyframes pulse-bg {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .pulse-bg { animation: pulse-bg 8s ease-in-out infinite; }
+        .fade-in-up { animation: fadeInUp 0.7s ease-out forwards; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .nav-link { position: relative; transition: color 0.2s; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(to right, #f43f5e, #ec4899); transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link.active::after { width: 100%; }
+        .mobile-menu { display: none; }
+        .mobile-menu.open { display: block; }
+    </style>
+</head>
+<body class="min-h-screen relative overflow-x-hidden">
+
+    <!-- Background -->
+    <div class="fixed inset-0 bg-gradient-to-br from-pink-200 via-rose-300 to-red-200 pulse-bg -z-10"></div>
+    <div class="fixed inset-0 opacity-30 -z-10">
+        <div class="absolute top-10 left-10 w-72 h-72 bg-pink-400 rounded-full filter blur-3xl pulse-bg"></div>
+        <div class="absolute bottom-20 right-20 w-96 h-96 bg-rose-400 rounded-full filter blur-3xl pulse-bg" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3">
+                    <div class="bg-gradient-to-br from-rose-400 to-pink-400 p-2 rounded-2xl">
+                        <span class="text-white text-2xl sm:text-3xl">❤️</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">Miracle & Glow</h1>
+                        <p class="text-xs text-rose-400 font-medium">Handmade with love</p>
+                    </div>
+                </a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link font-semibold text-gray-700 hover:text-rose-600">Home</a>
+                    <a href="shop.html" class="nav-link font-semibold text-gray-700 hover:text-rose-600">Shop</a>
+                    <a href="about.html" class="nav-link font-semibold text-gray-700 hover:text-rose-600">About</a>
+                    <a href="contact.html" class="nav-link active font-semibold text-rose-600">Contact</a>
+                    <a href="shop.html" class="bg-gradient-to-r from-rose-500 to-pink-500 text-white px-5 py-2 rounded-full font-semibold hover:from-rose-600 hover:to-pink-600 transition-all shadow-md">Shop Now 🌹</a>
+                </nav>
+                <button onclick="toggleMobileMenu()" class="md:hidden bg-rose-100 p-2 rounded-xl text-rose-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu md:hidden mt-4 pb-2 border-t border-pink-100 pt-4 space-y-3">
+                <a href="index.html" class="block font-semibold text-gray-700 py-1">Home</a>
+                <a href="shop.html" class="block font-semibold text-gray-700 py-1">Shop</a>
+                <a href="about.html" class="block font-semibold text-gray-700 py-1">About</a>
+                <a href="contact.html" class="block font-semibold text-rose-600 py-1">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-6 text-center fade-in-up">
+        <p class="text-rose-500 font-semibold uppercase tracking-widest text-sm mb-2">Get in touch</p>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">We'd love to hear from you</h2>
+        <p class="text-gray-600 text-lg max-w-xl mx-auto">Have a question, a custom order request, or just want to say hi? Reach out — we respond fast 💕</p>
+    </section>
+
+    <!-- Contact Cards -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-14">
+            <div class="reveal bg-white/90 rounded-3xl p-8 text-center shadow-xl border-2 border-pink-100 hover:scale-105 transition-transform">
+                <div class="w-14 h-14 bg-gradient-to-br from-rose-400 to-pink-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">📧</div>
+                <h4 class="font-bold text-gray-800 mb-2 text-lg">Email Us</h4>
+                <a href="mailto:hello@miracleglow.co.za" class="text-rose-500 hover:text-rose-700 transition-colors font-medium">hello@miracleglow.co.za</a>
+            </div>
+            <div class="reveal bg-white/90 rounded-3xl p-8 text-center shadow-xl border-2 border-pink-100 hover:scale-105 transition-transform" style="transition-delay:0.1s">
+                <div class="w-14 h-14 bg-gradient-to-br from-green-400 to-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">📱</div>
+                <h4 class="font-bold text-gray-800 mb-2 text-lg">WhatsApp / Call</h4>
+                <a href="https://wa.me/27655160293" target="_blank" rel="noopener noreferrer" class="text-rose-500 hover:text-rose-700 transition-colors font-medium">+27 69 194 4529</a>
+            </div>
+            <div class="reveal bg-white/90 rounded-3xl p-8 text-center shadow-xl border-2 border-pink-100 hover:scale-105 transition-transform" style="transition-delay:0.2s">
+                <div class="w-14 h-14 bg-gradient-to-br from-rose-400 to-pink-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">📍</div>
+                <h4 class="font-bold text-gray-800 mb-2 text-lg">Location</h4>
+                <p class="text-gray-600 font-medium">Pretoria, South Africa</p>
+            </div>
+        </div>
+
+        <!-- Contact Form + Social -->
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+
+            <!-- Form -->
+            <div class="lg:col-span-3 reveal">
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 sm:p-10 shadow-xl border-2 border-pink-100">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Send us a message</h3>
+                    <div id="form-success" class="hidden bg-green-50 border-2 border-green-200 rounded-2xl p-6 text-center mb-6">
+                        <div class="text-4xl mb-3">✅</div>
+                        <p class="font-bold text-green-700 text-lg">Message sent!</p>
+                        <p class="text-green-600 text-sm mt-1">We'll get back to you as soon as possible 💕</p>
+                    </div>
+                    <form id="contact-form" onsubmit="submitForm(event)" novalidate>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Your Name *</label>
+                                <input type="text" id="contactName" placeholder="e.g. Thandi Mokoena"
+                                       class="w-full px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-rose-400 focus:outline-none transition-colors">
+                                <p id="err-contactName" class="text-red-500 text-xs mt-1 hidden">Please enter your name</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Email Address *</label>
+                                <input type="email" id="contactEmail" placeholder="you@example.com"
+                                       class="w-full px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-rose-400 focus:outline-none transition-colors">
+                                <p id="err-contactEmail" class="text-red-500 text-xs mt-1 hidden">Please enter a valid email</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" id="contactPhone" placeholder="+27 65 000 0000"
+                                   class="w-full px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-rose-400 focus:outline-none transition-colors">
+                            <p id="err-contactPhone" class="text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Subject *</label>
+                            <select id="contactSubject" class="w-full px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-rose-400 focus:outline-none transition-colors bg-white">
+                                <option value="">Select a subject</option>
+                                <option value="order">Order Enquiry</option>
+                                <option value="custom">Custom Order Request</option>
+                                <option value="delivery">Delivery Question</option>
+                                <option value="general">General Question</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <p id="err-contactSubject" class="text-red-500 text-xs mt-1 hidden">Please select a subject</p>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Message *</label>
+                            <textarea id="contactMessage" rows="5" placeholder="Tell us what's on your mind..."
+                                      class="w-full px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-rose-400 focus:outline-none transition-colors resize-none"></textarea>
+                            <p id="err-contactMessage" class="text-red-500 text-xs mt-1 hidden">Please enter your message</p>
+                        </div>
+                        <button type="submit" id="submit-btn"
+                                class="w-full bg-gradient-to-r from-rose-500 to-pink-500 text-white py-4 rounded-2xl font-bold text-lg hover:from-rose-600 hover:to-pink-600 transition-all shadow-lg hover:scale-105 transform">
+                            Send Message 💕
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Social & Hours -->
+            <div class="lg:col-span-2 space-y-6">
+                <div class="reveal bg-white/90 rounded-3xl p-8 shadow-xl border-2 border-pink-100" style="transition-delay:0.15s">
+                    <h3 class="text-xl font-bold text-gray-800 mb-5">Follow Us</h3>
+                    <div class="space-y-4">
+                        <a href="soon.html" class="flex items-center gap-4 p-3 rounded-2xl hover:bg-pink-50 transition-colors group">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800 group-hover:text-rose-600 transition-colors">Facebook</p>
+                                <p class="text-sm text-gray-500">@MiracleAndGlow</p>
+                            </div>
+                        </a>
+                        <a href="soon.html" class="flex items-center gap-4 p-3 rounded-2xl hover:bg-pink-50 transition-colors group">
+                            <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800 group-hover:text-rose-600 transition-colors">Instagram</p>
+                                <p class="text-sm text-gray-500">@miracleglow_sa</p>
+                            </div>
+                        </a>
+                        <a href="soon.html" class="flex items-center gap-4 p-3 rounded-2xl hover:bg-pink-50 transition-colors group">
+                            <div class="w-12 h-12 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800 group-hover:text-rose-600 transition-colors">TikTok</p>
+                                <p class="text-sm text-gray-500">@miracleglow</p>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/27655160293" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-3 rounded-2xl hover:bg-pink-50 transition-colors group">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800 group-hover:text-rose-600 transition-colors">WhatsApp</p>
+                                <p class="text-sm text-gray-500">+27 69 194 4529</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="reveal bg-white/90 rounded-3xl p-8 shadow-xl border-2 border-pink-100" style="transition-delay:0.25s">
+                    <h3 class="text-xl font-bold text-gray-800 mb-5">Response Times</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center py-2 border-b border-pink-100">
+                            <span class="text-gray-600">WhatsApp</span>
+                            <span class="font-bold text-green-600 bg-green-50 px-3 py-1 rounded-full">Within 1 hour</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-pink-100">
+                            <span class="text-gray-600">Email</span>
+                            <span class="font-bold text-rose-600 bg-rose-50 px-3 py-1 rounded-full">Within 24 hours</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-gray-600">Available</span>
+                            <span class="font-bold text-gray-700">Mon – Sat, 8am–6pm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-rose-400 to-pink-400 text-white py-10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
+                        <span class="text-4xl">❤️</span>
+                        <h3 class="text-2xl font-bold">Miracle & Glow</h3>
+                    </div>
+                    <p class="text-white/90 text-sm mb-4">Handcrafted roses and scented candles made with love, just for you 💕</p>
+                </div>
+                <div class="text-center">
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <div class="space-y-2 text-sm">
+                        <p><a href="index.html" class="hover:text-pink-200 transition-colors">Home</a></p>
+                        <p><a href="shop.html" class="hover:text-pink-200 transition-colors">Shop</a></p>
+                        <p><a href="about.html" class="hover:text-pink-200 transition-colors">About Us</a></p>
+                        <p><a href="contact.html" class="hover:text-pink-200 transition-colors">Contact</a></p>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <h4 class="text-xl font-bold mb-4">Contact Us</h4>
+                    <div class="space-y-2 text-sm">
+                        <p>📧 hello@miracleglow.co.za</p>
+                        <p>📱 +27 69 194 4529</p>
+                        <p>📍 Pretoria, South Africa</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-white/80 text-sm">&copy; 2026 Miracle & Glow. All rights reserved. Made with 💕 in South Africa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/27655160293" target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 transform"
+       title="Chat with us on WhatsApp">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script>
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('open'); }
+
+        function submitForm(e) {
+            e.preventDefault();
+
+            const rules = [
+                {
+                    id: 'contactName',
+                    errId: 'err-contactName',
+                    check: v => v.trim().length >= 2,
+                    msg: 'Please enter your name'
+                },
+                {
+                    id: 'contactEmail',
+                    errId: 'err-contactEmail',
+                    check: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
+                    msg: 'Please enter a valid email address'
+                },
+                {
+                    id: 'contactSubject',
+                    errId: 'err-contactSubject',
+                    check: v => v !== '',
+                    msg: 'Please select a subject'
+                },
+                {
+                    id: 'contactMessage',
+                    errId: 'err-contactMessage',
+                    check: v => v.trim().length >= 10,
+                    msg: 'Message must be at least 10 characters'
+                },
+            ];
+
+            // Phone is optional — only validate format if something was typed
+            const phoneVal = document.getElementById('contactPhone').value.trim().replace(/\s/g, '');
+            const phoneErr = document.getElementById('err-contactPhone');
+            let phoneOk = true;
+            if (phoneVal.length > 0) {
+                phoneOk = /^(\+27|0)[6-8][0-9]{8}$/.test(phoneVal);
+                if (phoneErr) {
+                    phoneErr.textContent = 'Enter a valid SA number (e.g. 0655160293)';
+                    phoneErr.classList.toggle('hidden', phoneOk);
+                    document.getElementById('contactPhone').classList.toggle('border-red-400', !phoneOk);
+                    document.getElementById('contactPhone').classList.toggle('border-pink-200', phoneOk);
+                }
+            } else {
+                if (phoneErr) phoneErr.classList.add('hidden');
+                document.getElementById('contactPhone').classList.remove('border-red-400');
+            }
+
+            let valid = phoneOk;
+            rules.forEach(({ id, errId, check, msg }) => {
+                const input = document.getElementById(id);
+                const err   = document.getElementById(errId);
+                const ok    = check(input.value);
+                input.classList.toggle('border-red-400', !ok);
+                input.classList.toggle('border-pink-200',  ok);
+                if (err) { err.textContent = ok ? '' : msg; err.classList.toggle('hidden', ok); }
+                if (!ok) valid = false;
+            });
+
+            if (valid) {
+                const templateParams = {
+                    from_name:    document.getElementById('contactName').value.trim(),
+                    from_email:   document.getElementById('contactEmail').value.trim(),
+                    phone_number: phoneVal || 'Not provided',
+                    subject:      document.getElementById('contactSubject').value,
+                    message:      document.getElementById('contactMessage').value.trim()
+                };
+
+                // Send silently — user sees success screen regardless
+                emailjs.send('service_wwh0skx', 'template_29p4exf', templateParams)
+                    .then(function(response) {
+                        console.log('Contact message forwarded!', response.status, response.text);
+                    }, function(error) {
+                        console.error('EmailJS failed — falling back to WhatsApp...', error);
+                        const text = `💬 *New Contact Message — Miracle & Glow*\n\n` +
+                            `*Name:* ${templateParams.from_name}\n` +
+                            `*Email:* ${templateParams.from_email}\n` +
+                            `*Phone:* ${templateParams.phone_number}\n` +
+                            `*Subject:* ${templateParams.subject}\n\n` +
+                            `*Message:*\n${templateParams.message}`;
+                        window.open(`https://wa.me/27655160293?text=${encodeURIComponent(text)}`, '_blank');
+                    });
+
+                document.getElementById('contact-form').classList.add('hidden');
+                document.getElementById('form-success').classList.remove('hidden');
+            }
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
