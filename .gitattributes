@@ -1,0 +1,2 @@
+*.js linguist-language=JavaScript and *.css linguist-language=CSS
+*.config.js linguist-language=JavaScript 
